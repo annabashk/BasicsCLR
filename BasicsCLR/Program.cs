@@ -28,10 +28,10 @@ namespace BasicsCLR
                     break;
 
                 default:
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
 
-                    Console.WriteLine("Your color is cyan!");
+                    Console.WriteLine("Your color is yellow!");
                     break;
             }
         }
