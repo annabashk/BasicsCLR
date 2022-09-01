@@ -6,33 +6,43 @@ namespace BasicsCLR
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы:");
+            (string Name, string LastName, string Login, int LoginLenght, bool HasPet, string[] favcolors, double Age) User;
 
-            var color = Console.ReadLine();
-
-            switch (color)
+            for (int k = 0; k < 3; k++)
             {
-                case "red":
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("Введите имя");
+                User.Name = Console.ReadLine();
 
-                    Console.WriteLine("Your color is red!");
-                    break;
+                Console.WriteLine("Введите фамилию");
+                User.LastName = Console.ReadLine();
 
+                Console.WriteLine("Введите логин");
+                User.Login = Console.ReadLine();
 
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                User.LoginLenght = User.Login.Length;
 
-                    Console.WriteLine("Your color is green!");
-                    break;
+                Console.WriteLine("Есть ли у вас животные? Да или Нет");
+                string result = Console.ReadLine();
 
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
+                if (result == "Да")
+                {
+                    User.HasPet = true;
+                }
+                else
+                {
+                    User.HasPet = false;
+                }
 
-                    Console.WriteLine("Your color is yellow!");
-                    break;
+                Console.WriteLine("Введите возраст пользователя");
+                User.Age = Convert.ToDouble(Console.ReadLine());
+
+                User.favcolors = new string[3];
+                Console.WriteLine("Введите три любимых цвета пользователя");
+
+                for (int i = 0; i < User.favcolors.Length; i++)
+                {
+                    User.favcolors[i] = Console.ReadLine();
+                }
             }
         }
     }
